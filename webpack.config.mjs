@@ -1,12 +1,13 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import process from 'process';
 
-module.exports = {
+export default {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   entry: './src/index.tsx',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(import.meta.dirname, 'dist'),
     publicPath: '/',
     filename: 'output.js',
   },

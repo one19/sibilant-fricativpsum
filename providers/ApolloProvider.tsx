@@ -11,7 +11,7 @@ const client = new ApolloClient({
 });
 
 export type Props = {
-  children: ReactNode;
+  children: ReactNode,
 };
 const ApolloProvider = ({ children }: Props) => (
   <Provider client={client}>{children}</Provider>

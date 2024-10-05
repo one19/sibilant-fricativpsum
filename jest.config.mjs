@@ -1,8 +1,8 @@
-module.exports = {
+export default {
   fakeTimers: {
     enableGlobally: true,
   },
-  testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: 'jsdom',
   clearMocks: true,
   moduleFileExtensions: ['js', 'ts', 'tsx', 'json'],
   transform: {

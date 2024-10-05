@@ -4,18 +4,19 @@ import {
   render as testRender,
   screen as testScreen,
 } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { MockedProvider } from '@apollo/client/testing';
 import { ThemeProvider } from 'styled-components';
 
 declare const global: {
-  React: any;
+  React: typeof React,
 };
 global.React = React;
 
 type WrapperProps = {
-  children: any;
-  graphqlMocks?: any[];
+  children: React.ReactNode,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  graphqlMocks?: any[],
 };
 
 export const WrappingComponent: React.FC<WrapperProps> = ({
@@ -29,7 +30,8 @@ export const WrappingComponent: React.FC<WrapperProps> = ({
   </ThemeProvider>
 );
 
-export const render = (element: any, graphqlMocks?: any[]) =>
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const render = (element: React.ReactNode, graphqlMocks?: any[]) =>
   testRender(element, {
     wrapper: (props) => (
       <WrappingComponent graphqlMocks={graphqlMocks} {...props} />

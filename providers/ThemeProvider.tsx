@@ -22,7 +22,7 @@ const theme = {
 };
 
 type Props = {
-  children: ReactNode;
+  children: ReactNode,
 };
 
 const ThemeProvider = ({ children }: Props) => (

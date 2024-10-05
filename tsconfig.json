@@ -30,7 +30,6 @@
     }
   },
   "include": [
-    ".eslintrc.json",
     "*.config.js",
     "**/*.ts",
     "**/*.tsx",

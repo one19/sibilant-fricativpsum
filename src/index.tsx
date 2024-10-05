@@ -43,5 +43,5 @@ root.render(
       <GlobalStyle />
       <App />
     </ApolloProvider>
-  </ThemeProvider>
+  </ThemeProvider>,
 );
